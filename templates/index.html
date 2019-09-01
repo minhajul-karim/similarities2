@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="col">
+	<form action="/compare" enctype="multipart/form-data" method="post" class="md-form" onsubmit="">
+		
+		<!-- File input for 1st file -->
+		<div class="form-group">
+			<label for="one">Select 1st file</label>
+			<input type="file" class="form-control-file" id="one" name="file1">
+		</div>
+		
+		<!-- File input for 1st file -->
+		<div class="form-group">
+			<label for="two">Select 2nd file</label>
+			<input type="file" class="form-control-file" id="two" name="file2">
+		</div>
+
+		<!-- Radio Buttons start -->
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="algorithm" id="radio1" value="lines" checked="checked">
+			<label class="form-check-label" for="radio1">
+				Compare lines
+			</label>
+		</div>
+		
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="algorithm" id="radio2" value="sentences">
+			<label class="form-check-label" for="radio2">
+				Compare sentences
+			</label>
+		</div>
+		
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="algorithm" id="radio3" value="substrings">
+			<label class="form-check-label" for="radio3">
+				Compare substrings
+				<input type="number" class="form-control w-75" id="exampleInputNum" name="length" placeholder="Length of substring" min="0">
+			</label>
+		</div>
+		<!-- Radio buttons end -->
+
+		<!-- Submit button -->
+		<button type="submit" class="btn btn-primary" id="five" onclick="">Submit</button>
+	</form>
+	<a id="g_drive" href="https://drive.google.com/drive/folders/1WqcfqYpxNsHGmvMqs9_cdlrq1LweVJyt" target="_blank">Try with some input files</a>
+</div>
+{% endblock %}
+			
